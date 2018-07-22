@@ -1,3 +1,5 @@
+const _ = require('underscore')
+
 const items = [1, 2, 3, 4, 5, 5]; // use this array to test your code. 
 /*
   Complete the following functions.
@@ -9,13 +11,18 @@ const items = [1, 2, 3, 4, 5, 5]; // use this array to test your code.
   You CAN use concat, push, pop, etc. but do not use the exact method that you are replicating
 */
 
-function each(elements, cb) {
+function each(element, cb) {
   // Do NOT use forEach to complete this function.
   // Iterates over a list of elements, yielding each in turn to the `cb` function.
   // This only needs to work with arrays.
   // You should also pass the index into `cb` as the second argument
   // based off http://underscorejs.org/#each
+  _.each(element, cb);
+  return cb(element)
 }
+console.log(each(items, (function(element){
+  console.log(element);
+})));
 
 function map(elements, cb) {
   // Do NOT use .map, to complete this function.
